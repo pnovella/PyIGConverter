@@ -1,0 +1,34 @@
+
+
+#--------- PATHS with modules to be used -------#
+CNTJob PATHS SV 1
+/home/pnovella/Physics/NEXT/sw/PyIGConverter/algos/
+
+#--------- DATA -------#
+CNTJob INPUT_DATA SV 1
+//home/pnovella/Physics/NEXT/DATA/Next100.Bi214.ICS.0.next
+
+#------ SAVE EVENTS IN OUTPUT FILE ----------# 
+CNTJob SAVE I 0
+
+#---------- NUMBER OF EVENTS TO ANALYZE ----------#
+CNTJob NEVENTS I 10
+
+#--------- ALGORITHMS-------#
+CNTJob ALGOS SV 1
+IGConverter
+
+#--------- INPUT DATA FORMAT -------#
+CNTJob READER S ireneReader
+
+#------------- log file -------------#
+CNTJob FLOG I 1
+CNTJob FLOG S IGConverter.log
+
+#---------- histogram file ----------#
+CNTJob FHISTOS S IGConverter.root
+
+#---------- Algorithm parameters ----------#
+
+#---------- output DST name ----------#
+IGConverter GATE_DST_NAME S Next100.Bi214.ICS.gate.root
