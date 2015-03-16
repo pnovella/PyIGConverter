@@ -74,6 +74,8 @@ class IGConverter(AAlgo):
 
             gpart.SetID( part.GetParticleID() )
             
+            gpart.SetCreatorProc( part.GetCreatorProcess() )
+
             pIDs[part.GetParticleID()] = gpart
 
             daus = part.GetDaughters()
@@ -116,8 +118,10 @@ class IGConverter(AAlgo):
                 
                 gtrk.SetParticle(gpart)
                 
-                gpart.AddTrack(gtrk) # Add to particle
+                #gtrk.SetLength(.....)
 
+                gpart.AddTrack(gtrk) # Add to particle
+                
                 gevent.AddMCTrack(gtrk) # add to event
                 
                 for hit in trk.GetHits():
