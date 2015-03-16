@@ -6,13 +6,19 @@ CNTJob PATHS SV 1
 
 #--------- DATA -------#
 CNTJob INPUT_DATA SV 1
-//home/pnovella/Physics/NEXT/DATA/Next100.Bi214.ICS.0.next
+/home/pnovella/Physics/NEXT/DATA/Next100.Bi214.ICS.0.next
 
 #------ SAVE EVENTS IN OUTPUT FILE ----------# 
-CNTJob SAVE I 0
+CNTJob SAVE I 1
 
 #---------- NUMBER OF EVENTS TO ANALYZE ----------#
 CNTJob NEVENTS I 10
+
+#---------- Print status messages after NDEBUG events ----------#
+CNTJob NDEBUG I 100
+
+#---------- VERBOSITY LEVEL ----------#
+CNTJob LEVEL I 1
 
 #--------- ALGORITHMS-------#
 CNTJob ALGOS SV 1
@@ -22,11 +28,23 @@ IGConverter
 CNTJob READER S ireneReader
 
 #------------- log file -------------#
-CNTJob FLOG I 1
+CNTJob LOG I 1
 CNTJob FLOG S IGConverter.log
 
 #---------- histogram file ----------#
+CNTJob HISTOS 1
 CNTJob FHISTOS S IGConverter.root
+
+#---------- documentation tex file ----------#
+# latex_gen class can be used in your algorithm
+CNTJob DOC 0
+CNTJob FDOC S IGConverter.tex
+
+#---------- output ps file for histoManager plots ----------#
+CNTJob FPS S IGConverter.ps
+
+#---------- open a TBrowser at the end of the run ----------#
+CNTJob BROWSER I 0
 
 #---------- Algorithm parameters ----------#
 
