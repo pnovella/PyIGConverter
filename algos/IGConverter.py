@@ -116,6 +116,8 @@ class IGConverter(AAlgo):
 
                 gtrk = gate.MCTrack()
                 
+                gtrk.SetID(part.GetParticleID())
+
                 gtrk.SetParticle(gpart)
                 
                 gtrk.SetLength(part.GetTrackLength())
