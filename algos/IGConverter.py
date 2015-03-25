@@ -118,7 +118,7 @@ class IGConverter(AAlgo):
                 
                 gtrk.SetParticle(gpart)
                 
-                #gtrk.SetLength(.....)
+                gtrk.SetLength(part.GetTrackLength())
 
                 gpart.AddTrack(gtrk) # Add to particle
                 
